@@ -143,7 +143,7 @@ toast.error("Password doesn't match")
                   <span className="label-text font-bold">Email</span>
                 </label>
                 <input
-                  type="text"
+                  type="email"
                   placeholder="Enter email"
                   name="email"
                   {...register("email", { required: true })}

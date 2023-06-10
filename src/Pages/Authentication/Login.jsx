@@ -3,8 +3,13 @@ import loginBanner from "../../assets/sports camp/Gallery/shadowBanner.png";
 import sportImg from "../../assets/sports camp/Gallery/sports equipments.png";
 import { Link } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProviders";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
+    const {userSignIn,google} = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -13,7 +18,15 @@ const Login = () => {
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-  };
+    userSignIn(data.email,data.password)
+    .then(res => {
+        const loggedUser = res.user;
+        toast.success("Successfully Logged In")
+        console.log(loggedUser);
+        reset()
+    })
+
+};
 
   const googleHandle = () => {};
   return (
@@ -41,7 +54,7 @@ const Login = () => {
                   <span className="label-text font-bold">Email</span>
                 </label>
                 <input
-                  type="text"
+                  type="email"
                   placeholder="Enter email"
                   name="email"
                   {...register("email", { required: true })}
