@@ -2,15 +2,16 @@ import { useForm } from "react-hook-form";
 import regBanner from "../../assets/sports camp/Gallery/registration.png";
 import campImg from "../../assets/sports camp/Gallery/SportsCamp.png";
 import { Link, useNavigate } from "react-router-dom";
-import { FaGoogle } from "react-icons/fa";
+import { FaEye, FaGoogle } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 
 const Register = () => {
     const {createUser, userUpdate,logOut,google} = useContext(AuthContext)
     const navigate = useNavigate();
+    const [hide,setHide] = useState(true)
   const {
     register,
     handleSubmit,
@@ -172,7 +173,7 @@ toast.error("Password doesn't match")
                   <span className="label-text font-bold">Password</span>
                 </label>
                 <input
-                  type="password"
+                  type={hide ? "password" : "text"}
                   placeholder="Enter password"
                   name="password"
                   {...register("password", {
@@ -183,6 +184,7 @@ toast.error("Password doesn't match")
                   })}
                   className="input input-bordered"
                 />
+                 <span className="inline"><button onClick={()=> setHide(!hide)} >{hide ? "View" : "Hide"}<FaEye className="inline-block m-1"></FaEye></button></span>
                 {errors.password?.type === "required" && (
                   <p className="text-red-700" role="alert">
                     Password is required
@@ -210,12 +212,13 @@ toast.error("Password doesn't match")
                   <span className="label-text font-bold">Confirm Password</span>
                 </label>
                 <input
-                  type="password"
+                  type={hide ? "password" : "text"}
                   placeholder="Enter password again"
                   name="confirm"
                   {...register("confirm", { required: true })}
                   className="input input-bordered"
                 />
+                 <span className="inline"><button onClick={()=> setHide(!hide)} >{hide ? "View" : "Hide"}<FaEye className="inline-block m-1"></FaEye></button></span>
                 {errors.confirm && (
                   <span className="text-red-700">
                     This field is must required

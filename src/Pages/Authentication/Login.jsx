@@ -2,8 +2,8 @@ import { useForm } from "react-hook-form";
 import loginBanner from "../../assets/sports camp/Gallery/shadowBanner.png";
 import sportImg from "../../assets/sports camp/Gallery/sports equipments.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaGoogle } from "react-icons/fa";
-import { useContext } from "react";
+import { FaGoogle,FaEye } from "react-icons/fa";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -13,6 +13,7 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || '/';
+    const [hide,setHide] = useState(true)
   const {
     register,
     handleSubmit,
@@ -111,7 +112,7 @@ const Login = () => {
                   <span className="label-text font-bold">Password</span>
                 </label>
                 <input
-                  type="password"
+                  type={hide ? "password" : "text"}
                   placeholder="Enter password"
                   name="password"
                   {...register("password", {
@@ -121,7 +122,9 @@ const Login = () => {
                     pattern: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]/,
                   })}
                   className="input input-bordered"
+                  
                 />
+                <span className="inline"><button onClick={()=> setHide(!hide)} >{hide ? "View" : "Hide"}<FaEye className="inline-block m-1"></FaEye></button></span>
                 {errors.password?.type === "required" && (
                   <p className="text-red-700" role="alert">
                     Password is required
