@@ -3,7 +3,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <h1>Sports Blitz Camp</h1>
+      <h1 className="text-4xl text-red-800">Sports Blitz Camp</h1>
     </>
   );
 }
