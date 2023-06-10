@@ -11,7 +11,7 @@ const HomeSlider = () => {
   return (
     <Carousel className="autoPlay infiniteLoop ">
       <div className="h-[650px] relative  ">
-        <div className="absolute end-16 top-56  p-8 m-5 text-black bg-white bg-opacity-20 max-w-xl">
+        <div className="absolute end-16 top-56  p-8 m-5 text-black bg-white bg-opacity-40 max-w-xl">
           <h2 className="text-3xl font-bold text-red-700 my-4">
             Unleash Your Inner Athlete at Sportz Blitz Summer Camp
           </h2>
@@ -26,7 +26,7 @@ const HomeSlider = () => {
         <img src={ban1} />
       </div>
       <div className="h-[650px] relative">
-      <div className="absolute end-16 top-56  p-8 m-5 text-black bg-white bg-opacity-20 max-w-xl">
+      <div className="absolute end-16 top-56  p-8 m-5 text-black bg-white bg-opacity-30 max-w-xl">
           <h2 className="text-3xl font-bold text-red-700 my-4">
             Unleash Your Inner Athlete at Sportz Blitz Summer Camp
           </h2>
