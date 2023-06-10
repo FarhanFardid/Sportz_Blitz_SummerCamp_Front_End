@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import regBanner from "../../assets/sports camp/Gallery/registartion.png";
+import regBanner from "../../assets/sports camp/Gallery/registration.png";
 import campImg from "../../assets/sports camp/Gallery/SportsCamp.png";
 import { Link } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
@@ -11,23 +11,31 @@ const Register = () => {
     reset,
     formState: { errors },
   } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
+  const googleHandle = () => {};
+
   return (
     <div>
-      <div
-        className="hero h-[550px]"
-        style={{ backgroundImage: `url(${regBanner})` }}
-      >
-        <div className="hero-overlay bg-opacity-50"></div>
+      <div className="hero">
         <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">Please Register</h1>
+          <div className="max-w-full">
+            <img src={regBanner} alt="banner" />
           </div>
         </div>
       </div>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row items-center justify-center">
           <div className="text-center lg:text-left w-full p-5">
-            <img src={campImg} alt="Auth Img" className="w-full" />
+            <h3 className="text-3xl font-bold text-green-900 py-2 text-center">
+              Please Register
+            </h3>
+            <p className="text-center py-1 text-2xl font-bold text-green-900">
+              To
+            </p>
+            <img src={campImg} alt="camp Img" className="w-full h-[400px]" />
           </div>
           <div className="card w-full  shadow-2xl bg-base-300 m-8">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body m-8">
@@ -133,25 +141,25 @@ const Register = () => {
               </div>
               <div className="form-control mt-6">
                 <input
-                  className="btn bg-[#D1A054]"
+                  className="btn bg-amber-700"
                   type="submit"
-                  value="Sign Up"
+                  value="Register"
                 />
               </div>
             </form>
             <p className="text-center font-medium py-2">
-              Already have Sportz Blitz Account?
+              Already Registered to Sportz Blitz? please{" "}
               <Link to="/login" className="text-blue-700 font-bold">
                 {" "}
                 Sign In
               </Link>
             </p>
             <div>
-              <p className="font-bold text-lg text-center">Or Sign Up with</p>
-              <div className=" py-3">
+              <p className="font-bold text-lg text-center">Or Sign Up with Google</p>
+              <div className=" py-3 text-center">
                 <button
                   onClick={googleHandle}
-                  className="p-1 m-2 btn btn-circle bg-gray-300 hover:bg-[#D1A054] text-gray-900 text-2xl"
+                  className="p-1 m-2 btn btn-circle  bg-slate-400 hover:bg-amber-700 text-blue-900 text-2xl"
                 >
                   <FaGoogle />
                 </button>
