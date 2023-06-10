@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import loginBanner from "../../assets/sports camp/Gallery/shadowBanner.png";
 import sportImg from "../../assets/sports camp/Gallery/sports equipments.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
@@ -10,12 +10,16 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const {userSignIn,google} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
     console.log(data);
     userSignIn(data.email,data.password)
@@ -23,12 +27,49 @@ const Login = () => {
         const loggedUser = res.user;
         toast.success("Successfully Logged In")
         console.log(loggedUser);
+        navigate(from);
         reset()
+    })
+    .catch(error=>{
+        console.log(error)
+        toast.error("Login Failed")
     })
 
 };
 
-  const googleHandle = () => {};
+  const googleHandle = () => {
+    google()
+    .then(res => {
+        const loggedUser = res.user;
+        console.log(loggedUser);
+        toast.success("Login Successful");
+              navigate(from);
+        const savedUser = {
+          name: loggedUser.displayName,
+          email: loggedUser.email,
+        };
+        console.log(savedUser);
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(savedUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              
+              toast.success("User Successfully Added to DB ");
+              
+            }
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error("Login Failed");
+      });
+  };
   return (
     <div>
       <div className="hero">

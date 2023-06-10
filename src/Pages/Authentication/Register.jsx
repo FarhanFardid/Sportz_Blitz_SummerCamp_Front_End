@@ -25,28 +25,27 @@ const Register = () => {
         .then(res => {
           const createdUser = res.user;
           toast.success("Successfully Registered");
-          reset();
-  
+         
           userUpdate(createdUser, data.name, data.photo)
             .then(() => {
               toast.success("User Profile Successfully Updated ");
-            //   const savedUser = { name: data.name, email: data.email };
-            //   fetch("http://localhost:5000/users", {
-            //     method: "POST",
-            //     headers: {
-            //       "content-type": "application/json",
-            //     },
-            //     body: JSON.stringify(savedUser),
-            //   })
-                // .then(res => res.json())
-                // .then((data) => {
-                //   if (data.insertedId) {
-                //     toast.success("User Successfully Added to DB ");
-                //     logOut();
-                //     navigate("/login");
-                //     reset();
-                //   }
-                // });
+              const savedUser = { name: data.name, email: data.email };
+              fetch("http://localhost:5000/users", {
+                method: "POST",
+                headers: {
+                  "content-type": "application/json",
+                },
+                body: JSON.stringify(savedUser),
+              })
+                .then(res => res.json())
+                .then((data) => {
+                  if (data.insertedId) {
+                    toast.success("User Successfully Added to DB ");
+                    logOut();
+                    navigate("/login");
+                    reset();
+                  }
+                });
             })
             .catch(() => {
               toast.error("User Profile Update Failed ");
@@ -71,29 +70,29 @@ toast.error("Password doesn't match")
         console.log(createdUser);
         toast.success("Successfully Registered");
         logOut();
-              navigate("/login");
-        // const savedUser = {
-        //   name: createdUser.displayName
-        //     ? createdUser.displayName
-        //     : "Name not available",
-        //   email: createdUser.email,
-        // };
-        // console.log(savedUser);
-        // fetch("http://localhost:5000/users", {
-        //   method: "POST",
-        //   headers: {
-        //     "content-type": "application/json",
-        //   },
-        //   body: JSON.stringify(savedUser),
-        // })
-        //   .then((res) => res.json())
-        //   .then((data) => {
-        //     if (data.insertedId) {
+             
+        const savedUser = {
+          name: createdUser.displayName
+            ? createdUser.displayName
+            : "Name not available",
+          email: createdUser.email,
+        };
+        console.log(savedUser);
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(savedUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+                navigate("/login");
+              toast.success("User Successfully Added to DB ");
               
-        //       toast.success("User Successfully Added to DB ");
-              
-        //     }
-        //   });
+            }
+          });
       })
       .catch((error) => {
         console.log(error);

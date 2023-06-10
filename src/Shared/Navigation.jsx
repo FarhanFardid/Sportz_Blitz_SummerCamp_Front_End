@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 import logo from '../assets/sports camp/Logo/logo-1.png'
 import { Tooltip } from "@mui/material";
+import { useContext } from "react";
+import { AuthContext } from "../Providers/AuthProviders";
 
 const Navigation = () => {
-    const user = null;
+  const {user,logOut} = useContext(AuthContext);
+   
     const handleLogout = () =>{
+      logOut()
 
     } 
     const navOptions = (
@@ -32,7 +36,7 @@ const Navigation = () => {
         </>
       );
       return (
-        <div className="navbar bg-white font-bold text-amber-800 bg-opacity-30 fixed z-10 max-w-screen-xl ">
+        <div className="navbar bg-green-300 font-bold text-amber-800 bg-opacity-30 fixed z-10 max-w-screen-xl ">
           <div className="navbar-start">
             <a className=" normal-case  ">
               {" "}
