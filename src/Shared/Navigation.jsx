@@ -10,7 +10,7 @@ const Navigation = () => {
     const navOptions = (
         <>
           <li>
-            <Link to="/" className="text-"> Home</Link>
+            <Link to="/" > Home</Link>
           </li>
     
           <li>
@@ -32,7 +32,7 @@ const Navigation = () => {
         </>
       );
       return (
-        <div className="navbar bg-blue-800 font-bold text-amber-800 bg-opacity-30 fixed z-10 max-w-screen-xl ">
+        <div className="navbar bg-white font-bold text-amber-800 bg-opacity-30 fixed z-10 max-w-screen-xl ">
           <div className="navbar-start">
             <a className=" normal-case  ">
               {" "}
@@ -47,7 +47,7 @@ const Navigation = () => {
               <span className="text-lg block text-center">Summer Camp</span>{" "}
             </p>
             <div className="dropdown navbar-center">
-              <label tabIndex={0} className="btn btn-ghost  lg:hidden">
+              <label tabIndex={0} className="btn btn-ghost lg:hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -65,7 +65,7 @@ const Navigation = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-slate-700  rounded-box w-52 font-bold"
+                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-slate-400  rounded-box w-52 font-bold"
               >
                 {navOptions}
               </ul>
