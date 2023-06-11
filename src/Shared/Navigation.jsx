@@ -36,7 +36,7 @@ const Navigation = () => {
         </>
       );
       return (
-        <div className="navbar bg-green-300 font-bold text-amber-800 bg-opacity-30 fixed z-10 max-w-screen-xl ">
+        <div className="navbar bg-slate-700 font-bold text-amber-800 bg-opacity-50  max-w-screen-xl ">
           <div className="navbar-start">
             <a className=" normal-case  ">
               {" "}
