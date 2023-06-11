@@ -11,7 +11,7 @@ const Gallery = () => {
   return (
     <div className="p-2">
         <h3 className="text-4xl font-bold text-amber-800 text-center py-5" >Camp Gallery </h3>
-      <div className="grid grid-cols-3 gap-3 p-1">
+      <div className="grid grid-cols-3 gap-3 pt-6">
       <div className="flex flex-col gap-2">
           <div>
             <img src={galImg1} alt="gallery-4" className="rounded-md" />

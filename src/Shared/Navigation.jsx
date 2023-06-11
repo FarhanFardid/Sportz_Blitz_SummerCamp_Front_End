@@ -36,7 +36,7 @@ const Navigation = () => {
         </>
       );
       return (
-        <div className="navbar bg-slate-700 font-bold text-amber-800 bg-opacity-50  max-w-screen-xl ">
+        <div className="navbar bg-slate-700 font-bold text-white bg-opacity-50  z-10 max-w-screen-xl ">
           <div className="navbar-start">
             <a className=" normal-case  ">
               {" "}
@@ -46,7 +46,7 @@ const Navigation = () => {
                 className="md:w-20 md:h-20 md:p-1 w-12 h-12 rounded-full md:mr-3 "
               />{" "}
             </a>
-            <p className=" md:text-2xl text-lg font-bold ms-1  ">
+            <p className=" md:text-2xl text-lg font-bold ms-1  text-slate-900 ">
               Sportz Blitz  {" "}
               <span className="text-lg block text-center">Summer Camp</span>{" "}
             </p>
@@ -69,14 +69,14 @@ const Navigation = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-slate-400  rounded-box w-52 font-bold"
+                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-slate-400  rounded-box w-52 font-bold z-10 "
               >
                 {navOptions}
               </ul>
             </div>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1 font-bold">{navOptions}</ul>
+            <ul className="menu menu-horizontal px-1 font-bold text-base">{navOptions}</ul>
           </div>
           <div className="navbar-end">
             {user ? (
@@ -91,7 +91,7 @@ const Navigation = () => {
                 </Tooltip>
                 <Link>
                   <button
-                    className="btn btn-md  bg-amber-700 text-white hover:bg-amber-900"
+                    className="btn btn-md  bg-slate-800 text-white hover:bg-slate-950"
                     onClick={handleLogout}
                   >
                     Logout
@@ -100,7 +100,7 @@ const Navigation = () => {
               </>
             ) : (
               <Link to="/login">
-                <button className="btn btn-md bg-amber-700 text-white hover:bg-amber-900">
+                <button className="btn btn-md bg-slate-800 text-white hover:bg-slate-950">
                   Login
                 </button>
               </Link>
