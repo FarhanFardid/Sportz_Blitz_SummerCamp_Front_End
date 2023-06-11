@@ -9,8 +9,8 @@ import galImg7 from "../../assets/sports camp/Gallery/baseball-3.png";
 
 const Gallery = () => {
   return (
-    <div>
-        <h3 className="text-3xl font-bold text-amber-800 text-center py-3" >Camp Gallery </h3>
+    <div className="p-2">
+        <h3 className="text-4xl font-bold text-amber-800 text-center py-5" >Camp Gallery </h3>
       <div className="grid grid-cols-3 gap-3 p-1">
       <div className="flex flex-col gap-2">
           <div>

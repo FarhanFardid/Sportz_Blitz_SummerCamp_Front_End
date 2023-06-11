@@ -1,18 +1,15 @@
-
-
-const InstructorCard = () => {
-    return (
-        <div className="card card-compact w-96 bg-base-100">
-  <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Instructor img" /></figure>
-  <div className="card-body">
-    <h2 className="card-title">Shoes!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div className="card-actions justify-end">
-      <button className="btn btn-primary">Buy Now</button>
+const InstructorCard = ({ instructor }) => {
+  const { image, sports } = instructor;
+  return (
+    <div className="card  w-full bg-slate-600">
+      <figure className=" w-full ">
+        <img src={image} alt="Instructor img" className="w-full h-72 rounded-lg " />
+      </figure>
+      <div className="card-body ">
+        <h2 className="card-title mx-auto font-bold text-white">Sports: {sports}</h2>
+      </div>
     </div>
-  </div>
-</div>
-    );
+  );
 };
 
 export default InstructorCard;
