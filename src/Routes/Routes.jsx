@@ -13,6 +13,7 @@ import AddClasses from "../Pages/Dashboard/AddClasses";
 import MyClasses from "../Pages/Dashboard/MyClasses";
 import SelectedClasses from "../Pages/Dashboard/SelectedClasses";
 import EnrolledClasses from "../Pages/Dashboard/EnrolledClasses";
+import PrivateRoutes from "./PrivateRoutes";
 
 
  const router = createBrowserRouter ([
@@ -46,7 +47,7 @@ import EnrolledClasses from "../Pages/Dashboard/EnrolledClasses";
     },
     {
      path: 'dashboard',
-     element: <Dashboard></Dashboard>,
+     element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
      children:[
         {
             path: 'manageClasses',
