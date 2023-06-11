@@ -6,6 +6,13 @@ import Classes from "../Pages/Classes/Classes";
 import Error from "../Pages/Error/Error";
 import Login from "../Pages/Authentication/Login";
 import Register from "../Pages/Authentication/Register";
+import Dashboard from "../Layout/Dashboard";
+import ManageClasses from "../Pages/Dashboard/ManageClasses";
+import ManageUsers from "../Pages/Dashboard/ManageUsers";
+import AddClasses from "../Pages/Dashboard/AddClasses";
+import MyClasses from "../Pages/Dashboard/MyClasses";
+import SelectedClasses from "../Pages/Dashboard/SelectedClasses";
+import EnrolledClasses from "../Pages/Dashboard/EnrolledClasses";
 
 
  const router = createBrowserRouter ([
@@ -32,9 +39,40 @@ import Register from "../Pages/Authentication/Register";
             {
                 path:'register',
                 element:<Register></Register>
-            }
+            },
+
         ],
         
+    },
+    {
+     path: 'dashboard',
+     element: <Dashboard></Dashboard>,
+     children:[
+        {
+            path: 'manageClasses',
+            element:<ManageClasses></ManageClasses>
+        },
+        {
+            path: 'manageUsers',
+            element:<ManageUsers></ManageUsers>
+        },
+        {
+            path: 'addClasses',
+            element:<AddClasses></AddClasses>
+        },
+        {
+            path: 'myClasses',
+            element:<MyClasses></MyClasses>
+        },
+        {
+            path: 'selectedClasses',
+            element:<SelectedClasses></SelectedClasses>
+        },
+        {
+            path: 'enrolledClasses',
+            element: <EnrolledClasses></EnrolledClasses>
+        }
+     ]
     },
     {
 path: '*',

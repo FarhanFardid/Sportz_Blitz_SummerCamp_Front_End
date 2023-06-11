@@ -1,7 +1,22 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProviders";
+import { useNavigate } from "react-router-dom";
 
 
 const ClassViewCard = ({cls}) => {
+
+    const navigate = useNavigate(); 
+    const {user} = useContext(AuthContext);
+
     const {class_name,image,instructor_name,available_seats,price,status} = cls;
+    const handleSelect = () =>{
+          if(user){
+            navigate('/')
+          }
+          else{
+            navigate('/login')
+          }
+    }
     return (
         <div className="card lg:card-side bg-base-100 grid grid-cols-12 gap-2">
         <figure className="col-span-8"><img src={image} alt="class images" className="h-96 " /></figure>
@@ -12,7 +27,7 @@ const ClassViewCard = ({cls}) => {
           <p className="font-bold ">Price: ${price}</p>
           <p className="font-bold ">Status: {status}</p>
           <div className="card-actions">
-            <button className="btn font-bold text-white bg-slate-800 hover:bg-slate-950">Select Class</button>
+            <button onClick={handleSelect} className="btn font-bold text-white bg-slate-800 hover:bg-slate-950">Select Class</button>
           </div>
         </div>
       </div>
