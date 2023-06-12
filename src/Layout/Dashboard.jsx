@@ -17,14 +17,14 @@ import DashboardNav from "../Shared/DashboardNav";
 
 const Dashboard = () => {
   const isAdmin = false;
-  const isInstructor = false;
+  const isInstructor = true;
   return (
     <div>
       <DashboardNav></DashboardNav>
 
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col items-center justify-center">
+        <div className="drawer-content">
           <label
             htmlFor="my-drawer-2"
             className="btn btn-primary drawer-button lg:hidden"
