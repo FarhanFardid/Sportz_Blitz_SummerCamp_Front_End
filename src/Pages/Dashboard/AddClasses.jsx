@@ -28,8 +28,8 @@ const AddClasses = () => {
         console.log(imgResponse)
         if(imgResponse.success){
             const imgURL = imgResponse.data.display_url;
-            const {name,instructor,seats,price} = data;
-            const newClass = {class_name: name, instructor_name:instructor,available_seats:seats, price,image:imgURL, status: "pending"}
+            const {name,instructor,seats,price,email} = data;
+            const newClass = {class_name: name, instructor_name:instructor, instructor_email: email, available_seats:seats, price,image:imgURL, status: "pending", total_enrolled : 0, feedback: ''}
             console.log(newClass); 
             axiosSecure.post('/classes', newClass)
             .then(data=>{
@@ -78,12 +78,27 @@ const AddClasses = () => {
             <input
               type="text"
               defaultValue={user?.displayName}
-              placeholder="Enter instructor name"
+              placeholder="Enter your name"
               {...register("instructor", { required: true })}
               className="input input-bordered w-full "
             />
             {errors.instructor && (
               <span className="text-red-700">Instructor name is required</span>
+            )}
+          </div>
+          <div className="form-control w-full px-3">
+            <label className="label">
+              <span className="label-text font-bold">Instructor Email*</span>
+            </label>
+            <input
+              type="email"
+              defaultValue={user?.email}
+              placeholder="Enter your email"
+              {...register("email", { required: true })}
+              className="input input-bordered w-full "
+            />
+            {errors.email && (
+              <span className="text-red-700">Instructor email is required</span>
             )}
           </div>
           <div className="form-control w-full px-3">
