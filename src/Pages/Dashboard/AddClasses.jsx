@@ -1,18 +1,54 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Providers/AuthProviders";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const AddClasses = () => {
+  const image_Hosting_Token = import.meta.env.VITE_Image_Upload_Token;
     const {user} = useContext(AuthContext);
+    const [axiosSecure] = useAxiosSecure();
+    const image_Hosting_Url = `https://api.imgbb.com/1/upload?key=${image_Hosting_Token}`
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
+  const onSubmit = (data) =>  {
+
+    const formData = new FormData();
+    formData.append('image', data.image[0])
+    fetch(image_Hosting_Url, {
+        method: "POST",
+        body: formData
+    })
+    .then(res =>res.json())
+    .then (imgResponse =>{
+        console.log(imgResponse)
+        if(imgResponse.success){
+            const imgURL = imgResponse.data.display_url;
+            const {name,instructor,seats,price} = data;
+            const newClass = {class_name: name, instructor_name:instructor,available_seats:seats, price,image:imgURL, status: "pending"}
+            console.log(newClass); 
+            axiosSecure.post('/classes', newClass)
+            .then(data=>{
+                console.log(data.data)
+                if (data.data.insertedId) {
+                    reset();
+                    Swal.fire({
+                      title: "Success",
+                      text: "New Class Added to Classes List Successfully ",
+                      icon: "success",
+                      confirmButtonText: "Cool",
+                    });
+                  } 
+            })
+
+        }
+    })
     console.log(data);
-  };
+  }
   return (
     <div>
         <h2 className="text-2xl text-center font-bold py-3 text-slate-800">Add A New Class</h2>
@@ -66,7 +102,7 @@ const AddClasses = () => {
           </div>
           <div className="form-control w-full px-3">
             <label className="label">
-              <span className="label-text font-bold">Price*</span>
+              <span className="label-text font-bold">Price($)*</span>
             </label>
             <input
               type="number"
