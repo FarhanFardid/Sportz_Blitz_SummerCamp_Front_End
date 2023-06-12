@@ -15,13 +15,15 @@ import { ImBook } from "react-icons/im";
 
 import DashboardNav from "../Shared/DashboardNav";
 import useAdmin from "../Hooks/useAdmin";
+import useInstructor from "../Hooks/useInstructor";
 
 const Dashboard = () => {
   const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
 
   console.log(isAdmin);
 
-  const isInstructor = false;
+  console.log(isInstructor);
   return (
     <div>
       <DashboardNav></DashboardNav>
