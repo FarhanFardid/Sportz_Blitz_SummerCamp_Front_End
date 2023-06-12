@@ -1,4 +1,4 @@
-import { FaMoneyCheck } from "react-icons/fa";
+import { FaArrowAltCircleUp } from "react-icons/fa";
 
 
 const MyClassRow = ({cls,index,refetch}) => {
@@ -35,7 +35,7 @@ const MyClassRow = ({cls,index,refetch}) => {
               onClick={() => handlePayment(_id)}
               className="btn btn-circle btn-sm bg-green-800 text-white hover:bg-green-700"
             >
-              <FaMoneyCheck />
+              <FaArrowAltCircleUp />
             </button>
           </td>
          
