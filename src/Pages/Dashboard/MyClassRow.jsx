@@ -1,8 +1,11 @@
 import { FaArrowAltCircleUp } from "react-icons/fa";
 
 
-const MyClassRow = ({cls,index,refetch}) => {
-    const {class_name,available_seats,price,image,status,total_enrolled,feedback} = cls;
+const MyClassRow = ({cls,index}) => {
+    const {class_name,available_seats,price,image,status,total_enrolled,feedback,_id} = cls;
+    const handlePayment =(id) =>{
+        console.log(id)
+    }
     return (
         <tbody>
         <tr>
