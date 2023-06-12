@@ -14,10 +14,14 @@ import {
 import { ImBook } from "react-icons/im";
 
 import DashboardNav from "../Shared/DashboardNav";
+import useAdmin from "../Hooks/useAdmin";
 
 const Dashboard = () => {
-  const isAdmin = false;
-  const isInstructor = true;
+  const [isAdmin] = useAdmin();
+
+  console.log(isAdmin);
+
+  const isInstructor = false;
   return (
     <div>
       <DashboardNav></DashboardNav>
