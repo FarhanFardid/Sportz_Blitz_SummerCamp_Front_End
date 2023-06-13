@@ -1,6 +1,8 @@
 import { MdFeedback } from "react-icons/md";
 import { FaThumbsDown, FaThumbsUp } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
+
 const ManageClassRow = ({ cls, index, refetch }) => {
   const {
     class_name,
@@ -37,31 +39,29 @@ const ManageClassRow = ({ cls, index, refetch }) => {
   };
   const handleDeny = (id) => {
     Swal.fire({
-        title: "Are you sure? Deny The Class",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, Deny ",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          fetch(`http://localhost:5000/classes/denied/${id}`, {
-            method: "PATCH",
-          })
-            .then((res) => res.json())
-            .then((data) => {
-              if (data.modifiedCount > 0) {
-                refetch();
-                Swal.fire(" Class Denied", "Class has been Denied.", "success");
-              }
-            });
-        }
-      });
+      title: "Are you sure? Deny The Class",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Deny ",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/classes/denied/${id}`, {
+          method: "PATCH",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.modifiedCount > 0) {
+              refetch();
+              Swal.fire(" Class Denied", "Class has been Denied.", "success");
+            }
+          });
+      }
+    });
   };
-  const handleFeedback = (id) => {
-    console.log(id);
-  };
+
   return (
     <tbody>
       <tr>
@@ -111,12 +111,18 @@ const ManageClassRow = ({ cls, index, refetch }) => {
         </td>
 
         <td className="text-center">
-          <button
-            onClick={() => handleFeedback(_id)}
-            className="btn btn-circle btn-sm bg-cyan-800 text-white hover:bg-cyan-500 "
-          >
-            <MdFeedback className="h-4 w-4" />
-          </button>
+          <Link to={`/dashboard/feedback/${_id}`}>
+            {" "}
+            <button
+              className={
+                status === "denied"
+                  ? "btn btn-circle btn-sm bg-cyan-800 text-white hover:bg-cyan-600 "
+                  : "btn btn-circle btn-sm bg-cyan-800 text-white hover:bg-cyan-600 btn-disabled"
+              }
+            >
+              <MdFeedback className="h-4 w-4" />
+            </button>
+          </Link>
         </td>
       </tr>
     </tbody>

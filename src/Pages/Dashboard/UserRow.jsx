@@ -140,8 +140,8 @@ const UserRow = ({ user, index, refetch }) => {
             onClick={() => handleAdmin(_id)}
             className={
               role === "admin"
-                ? "btn btn-circle btn-sm  btn-disabled  bg-green-800 text-white text-center hover:bg-green-700"
-                : "btn btn-circle btn-sm bg-green-800 text-white hover:bg-green-700 "
+                ? "btn btn-circle btn-sm  btn-disabled  bg-green-800 text-white text-center hover:bg-green-600"
+                : "btn btn-circle btn-sm bg-green-800 text-white hover:bg-green-600 "
             }
           >
             <RiAdminFill />
@@ -151,9 +151,9 @@ const UserRow = ({ user, index, refetch }) => {
           <button
             onClick={() => handleInstructor(_id)}
             className={
-              role === "instructor"
-                ? "btn btn-circle btn-sm bg-cyan-800 text-white hover:bg-cyan-700 btn-disabled"
-                : "btn btn-circle btn-sm bg-cyan-800 text-white hover:bg-cyan-700"
+             ((role === "admin" )||(role === "instructor"))
+                ? "btn btn-circle btn-sm bg-cyan-800 text-white hover:bg-cyan-600 btn-disabled"
+                : "btn btn-circle btn-sm bg-cyan-800 text-white hover:bg-cyan-600"
             }
           >
             <FaUserGraduate />
@@ -165,8 +165,8 @@ const UserRow = ({ user, index, refetch }) => {
             onClick={() => handleDelete(_id)}
             className={
               role === "admin"
-                ? "btn btn-circle btn-sm bg-red-800 text-white hover:bg-red-700 btn-disabled"
-                : "btn btn-circle btn-sm bg-red-800 text-white hover:bg-red-700"
+                ? "btn btn-circle btn-sm bg-red-800 text-white hover:bg-red-600 btn-disabled"
+                : "btn btn-circle btn-sm bg-red-800 text-white hover:bg-red-600"
             }
           >
             <FaTrashAlt />
