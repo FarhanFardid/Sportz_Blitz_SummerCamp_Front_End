@@ -60,7 +60,7 @@ const ClassRow = ({ cls, index, refetch }) => {
         </td>
         <td className="font-bold text-center"> ${price}</td>
         <td className="font-bold text-center">
-         <Link to="/dashboard/payment"><button className="btn btn-circle btn-sm bg-green-800 text-white hover:bg-green-600 ">
+         <Link to={`/dashboard/payment/${_id}`}><button className="btn btn-circle btn-sm bg-green-800 text-white hover:bg-green-600 ">
             <FaMoneyCheck />
           </button></Link> 
         </td>

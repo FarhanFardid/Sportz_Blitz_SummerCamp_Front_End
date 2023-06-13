@@ -90,8 +90,9 @@ import Payment from "../Pages/Dashboard/Payment";
             element: <EnrolledClasses></EnrolledClasses>
         },
         {
-            path: 'payment',
-            element: <Payment></Payment>
+            path: 'payment/:id',
+            element: <Payment></Payment>,
+            loader: ({params}) => fetch(`http://localhost:5000/cart/${params.id}`)
         }
      ]
     },
