@@ -95,15 +95,15 @@ const UserRow = ({ user, index, refetch }) => {
   return (
     <tbody>
       <tr>
-        <td className="font-bold">{index + 1}</td>
+        <td className="font-bold text-center">{index + 1}</td>
 
         <td>
-          <p className="font-bold">{name}</p>
+          <p className="font-bold text-center">{name}</p>
         </td>
         <td>
-          <div className="font-bold">{email}</div>
+          <div className="font-bold text-center">{email}</div>
         </td>
-        <td className="font-bold">
+        <td className="font-bold text-center">
           {role === "admin" ? (
             <>
               <button>

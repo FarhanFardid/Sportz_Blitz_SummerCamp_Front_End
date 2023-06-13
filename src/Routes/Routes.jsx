@@ -17,6 +17,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import AdminRoutes from "./AdminRoutes";
 import InstructorRoutes from "./InstructorRoutes";
 import AdminFeedback from "../Pages/Dashboard/AdminFeedback";
+import UpdateClass from "../Pages/Dashboard/UpdateClass";
 
 
  const router = createBrowserRouter ([
@@ -62,7 +63,7 @@ import AdminFeedback from "../Pages/Dashboard/AdminFeedback";
         },
         {
           path: 'feedback/:id',
-          element:<AdminFeedback></AdminFeedback>,
+          element:<AdminRoutes><AdminFeedback></AdminFeedback></AdminRoutes>,
           loader: ({params})=> fetch(`http://localhost:5000/classes/${params.id}`)
         },
         {
@@ -72,6 +73,12 @@ import AdminFeedback from "../Pages/Dashboard/AdminFeedback";
         {
             path: 'myClasses',
             element:<InstructorRoutes><MyClasses></MyClasses></InstructorRoutes>
+        },
+        {
+             path:'updateClass/:id',
+             element:<InstructorRoutes><UpdateClass></UpdateClass></InstructorRoutes>,
+             loader: ({params}) => fetch(`http://localhost:5000/classes/${params.id}`)
+             
         },
         {
             path: 'selectedClasses',

@@ -20,12 +20,12 @@ const ManageUsers = () => {
         <th>
           No.
         </th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Role</th>
-        <th>Make Admin</th>
-        <th>Make Instructor</th>
-        <th>Delete</th>
+        <th className="font-bold text-center">Name</th>
+        <th className="font-bold text-center">Email</th>
+        <th className="font-bold text-center">Role</th>
+        <th className="font-bold text-center">Make Admin</th>
+        <th className="font-bold text-center">Make Instructor</th>
+        <th className="font-bold text-center">Delete</th>
       </tr>
             </thead>
 

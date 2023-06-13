@@ -3,8 +3,12 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useClassCart from "../../Hooks/useClassCart";
+import useAdmin from "../../Hooks/useAdmin";
+import useInstructor from "../../Hooks/useInstructor";
 
 const ClassViewCard = ({ cls }) => {
+  const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const [, refetch] = useClassCart();
@@ -63,7 +67,7 @@ const ClassViewCard = ({ cls }) => {
     }
   };
   return (
-    <div className="card lg:card-side bg-base-100 grid grid-cols-12 gap-2">
+    <div className={(available_seats == 0)? "card lg:card-side bg-red-600 text-white grid grid-cols-12 gap-2" : "card lg:card-side bg-base-200 grid grid-cols-12 gap-2"}>
       <figure className="col-span-8">
         <img src={image} alt="class images" className="h-96 " />
       </figure>
@@ -76,7 +80,7 @@ const ClassViewCard = ({ cls }) => {
         <div className="card-actions">
           <button
             onClick={() => handleSelect(cls)}
-            className="btn font-bold text-white bg-slate-800 hover:bg-slate-950"
+            className={(isAdmin || isInstructor ||(available_seats == 0))? "btn font-bold text-white bg-slate-600  btn-disabled" : "btn font-bold text-white bg-slate-800 hover:bg-slate-950"}
           >
             Select Class
           </button>

@@ -4,7 +4,8 @@ import ClassCard from "./ClassCard";
 
 const PopularClasses = () => {
     const [classes] = useClasses();
-    const topClasses = classes.slice(0,6);
+    const approvedClasses = classes.filter(cls => cls.status === 'approved')
+    const topClasses = approvedClasses.slice(0,6);
     return (
         <div className="p-3 bg-slate-100">
         <h3 className="text-4xl font-bold text-amber-800 text-center py-3">Popular Classes</h3>

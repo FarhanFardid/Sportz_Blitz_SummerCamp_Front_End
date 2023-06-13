@@ -43,7 +43,7 @@ const ClassRow = ({cls,index,refetch}) => {
     return (
         <tbody>
       <tr>
-        <td className="font-bold">{index + 1}</td>
+        <td className="font-bold  text-center">{index + 1}</td>
 
         <td>
           <div className="flex items-center space-x-3">
@@ -55,24 +55,24 @@ const ClassRow = ({cls,index,refetch}) => {
           </div>
         </td>
         <td>
-          <div className="font-bold">{class_name}</div>
+          <div className="font-bold  text-center">{class_name}</div>
         </td>
         <td>
-          <div className="font-bold">{instructor_name}</div>
+          <div className="font-bold  text-center">{instructor_name}</div>
         </td>
-        <td className="font-bold"> ${price}</td>
-        <td>
+        <td className="font-bold text-center"> ${price}</td>
+        <td className="font-bold text-center">
           <button
             onClick={() => handlePayment(_id)}
-            className="btn btn-circle btn-sm bg-green-800 text-white hover:bg-green-700"
+            className="btn btn-circle btn-sm bg-green-800 text-white hover:bg-green-600 " 
           >
             <FaMoneyCheck />
           </button>
         </td>
-        <td>
+        <td className="font-bold text-center">
           <button
             onClick={() => handleDelete(_id)}
-            className="btn btn-circle btn-sm bg-red-800 text-gray-500 hover:bg-red-700"
+            className="btn btn-circle btn-sm bg-red-800 text-white hover:bg-red-600"
           >
             <FaTrashAlt />
           </button>

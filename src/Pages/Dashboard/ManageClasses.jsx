@@ -21,15 +21,15 @@ const ManageClasses = () => {
           <th className="font-bold text-center">
             No.
           </th>
-          <th className="font-bold text-center">Image</th>
-          <th className="font-bold text-center">Class Name</th>
-          <th className="font-bold text-center">Instructor</th>
-          <th className="font-bold text-center">Instructor Email</th>
-          <th className="font-bold text-center">Available Seats</th>
-          <th className="font-bold text-center">Status</th>
-          <th className="font-bold text-center">Approved</th>
-          <th className="font-bold text-center">Deny</th>
-          <th className="font-bold text-center">Feedback</th>
+          <th className="font-bold text-center text-black">Image</th>
+          <th className="font-bold text-center text-black">Class Name</th>
+          <th className="font-bold text-center text-black">Instructor</th>
+          <th className="font-bold text-center text-black">Instructor Email</th>
+          <th className="font-bold text-center text-black">Available Seats</th>
+          <th className="font-bold text-center text-black">Status</th>
+          <th className="font-bold text-center text-black">Approved</th>
+          <th className="font-bold text-center text-black">Deny</th>
+          <th className="font-bold text-center text-black">Feedback</th>
         </tr>
               </thead>
   

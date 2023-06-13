@@ -65,7 +65,7 @@ const ManageClassRow = ({ cls, index, refetch }) => {
   return (
     <tbody>
       <tr>
-        <td className="font-bold">{index + 1}</td>
+        <td className="font-bold text-center">{index + 1}</td>
         <td>
           {" "}
           <div className="items-center justify-center">

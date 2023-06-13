@@ -227,7 +227,7 @@ toast.error("Password doesn't match")
               </div>
               <div className="form-control mt-6">
                 <input
-                  className="btn text-white font-bold bg-amber-700 hover:bg-amber-900"
+                  className="btn text-cyan-500 font-bold bg-slate-800 hover:bg-slate-950"
                   type="submit"
                   value="Register"
                 />
@@ -245,7 +245,7 @@ toast.error("Password doesn't match")
               <div className=" py-3 text-center">
                 <button
                   onClick={googleHandle}
-                  className="p-1 m-2 btn btn-circle  bg-slate-400 hover:bg-amber-700 text-blue-900 text-2xl"
+                  className="p-1 m-2 btn btn-circle  bg-slate-700 hover:bg-slate-900 text-cyan-500 text-2xl"
                 >
                   <FaGoogle />
                 </button>

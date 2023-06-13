@@ -75,21 +75,22 @@ const Login = () => {
     <div>
       <div className="hero">
         <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-full">
-            <img src={loginBanner} alt="banner" />
+          <div className="w-full relative">
+          <h3 className="text-3xl font-bold text-slate-900 pt-4 text-center absolute top-5 left-72">
+              Please Login
+            </h3>
+            <img src={loginBanner} alt="banner"  className="w-full"/>
         
           </div>
         </div>
       </div>
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen bg-base-300">
         <div className="hero-content flex-col lg:flex-row items-center justify-center">
           <div className="text-center lg:text-left w-full p-5">
             <img src={sportImg} alt="sport Img" className="w-full h-[400px]" />
           </div>
           <div className="card w-full  shadow-2xl bg-base-300 m-8">
-          <h3 className="text-3xl font-bold text-amber-900 pt-4 text-center">
-              Please Login
-            </h3>
+          
             <form onSubmit={handleSubmit(onSubmit)} className="card-body m-8">
               <div className="form-control">
                 <label className="label">
@@ -150,7 +151,7 @@ const Login = () => {
 
               <div className="form-control mt-6">
                 <input
-                  className="btn text-white font-bold bg-amber-700 hover:bg-amber-900"
+                  className="btn text-cyan-500 font-bold bg-slate-800 hover:bg-slate-950"
                   type="submit"
                   value="Login"
                 />
@@ -170,7 +171,7 @@ const Login = () => {
               <div className=" py-3 text-center">
                 <button
                   onClick={googleHandle}
-                  className="p-1 m-2 btn btn-circle  bg-slate-400 hover:bg-amber-700 text-blue-900 text-2xl"
+                  className="p-1 m-2 btn btn-circle  bg-slate-700 hover:bg-slate-900 text-cyan-500 text-2xl"
                 >
                   <FaGoogle />
                 </button>

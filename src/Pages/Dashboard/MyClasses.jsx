@@ -18,17 +18,17 @@ const MyClasses = () => {
           <table className="table mx-auto w-full m-5">
             <thead>
             <tr>
-        <th>
+        <th className="font-bold text-black text-center">
           No.
         </th>
-        <th>Class Image</th>
-        <th>Class Name</th>
-        <th>Available seats</th>
-        <th>Total Enrolled</th>
-        <th>Price</th>
-        <th>Status</th>
-        <th>Feedback</th>
-        <th>Update</th>
+        <th className="font-bold text-black text-center">Class Image</th>
+        <th className="font-bold text-black text-center">Class Name</th>
+        <th className="font-bold text-black text-center">Available seats</th>
+        <th className="font-bold text-black text-center">Total Enrolled</th>
+        <th className="font-bold text-black text-center">Price</th>
+        <th className="font-bold text-black text-center">Status</th>
+        <th className="font-bold text-black text-center">Feedback</th>
+        <th className="font-bold text-black text-center">Update</th>
       </tr>
             </thead>
 

@@ -14,13 +14,13 @@ const SelectedClasses = () => {
           <table className="table mx-auto w-full m-5">
             <thead>
               <tr>
-                <th>Class No.</th>
-                <th>Class Image</th>
-                <th>Class Name</th>
-                <th>Instructor Name</th>
-                <th>Price</th>
-                <th>Pay</th>
-                <th>Delete</th>
+                <th className="text-black font-bold text-center">Class No.</th>
+                <th className="text-black font-bold text-center">Class Image</th>
+                <th className="text-black font-bold text-center">Class Name</th>
+                <th className="text-black font-bold text-center">Instructor Name</th>
+                <th className="text-black font-bold text-center">Price</th>
+                <th className="text-black font-bold text-center">Pay</th>
+                <th className="text-black font-bold text-center">Delete</th>
               </tr>
             </thead>
 
