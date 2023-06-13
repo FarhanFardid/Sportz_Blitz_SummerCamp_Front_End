@@ -1,47 +1,45 @@
 import { FaMoneyCheck, FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
+const ClassRow = ({ cls, index, refetch }) => {
+  const { _id, class_name, image, instructor_name, price } = cls;
 
-const ClassRow = ({cls,index,refetch}) => {
-    const {_id,class_name,image,instructor_name,price} = cls;
+  
+  const handleDelete = (_id) => {
+    Swal.fire({
+      title: "Remove Class From Cart?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/cart/${_id}`, {
+          method: "DELETE",
+          headers: {
+            "content-type": "application/json",
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              refetch();
+              Swal.fire(
+                "Deleted!",
+                "Class has been removed from cart.",
+                "success"
+              );
+            }
+          });
+      }
+    });
+  };
 
-    const handlePayment = (_id) =>{
-        console.log(_id)
-    }
-    const handleDelete = (_id) => {
-        Swal.fire({
-          title: "Remove Class From Cart?",
-          text: "You won't be able to revert this!",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Yes, delete it!",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            fetch(`http://localhost:5000/cart/${_id}`, {
-              method: "DELETE",
-              headers: {
-                "content-type": "application/json",
-              },
-            })
-              .then((res) => res.json())
-              .then((data) => {
-                if (data.deletedCount > 0) {
-                  refetch();
-                  Swal.fire(
-                    "Deleted!",
-                    "Class has been removed from cart.",
-                    "success"
-                  );
-                }
-              });
-          }
-        });
-      };
-
-    return (
-        <tbody>
+  return (
+    <tbody>
       <tr>
         <td className="font-bold  text-center">{index + 1}</td>
 
@@ -62,12 +60,9 @@ const ClassRow = ({cls,index,refetch}) => {
         </td>
         <td className="font-bold text-center"> ${price}</td>
         <td className="font-bold text-center">
-          <button
-            onClick={() => handlePayment(_id)}
-            className="btn btn-circle btn-sm bg-green-800 text-white hover:bg-green-600 " 
-          >
+         <Link to="/dashboard/payment"><button className="btn btn-circle btn-sm bg-green-800 text-white hover:bg-green-600 ">
             <FaMoneyCheck />
-          </button>
+          </button></Link> 
         </td>
         <td className="font-bold text-center">
           <button
@@ -79,7 +74,7 @@ const ClassRow = ({cls,index,refetch}) => {
         </td>
       </tr>
     </tbody>
-    );
+  );
 };
 
 export default ClassRow;

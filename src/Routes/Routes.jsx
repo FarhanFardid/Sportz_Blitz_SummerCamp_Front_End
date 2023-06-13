@@ -18,6 +18,7 @@ import AdminRoutes from "./AdminRoutes";
 import InstructorRoutes from "./InstructorRoutes";
 import AdminFeedback from "../Pages/Dashboard/AdminFeedback";
 import UpdateClass from "../Pages/Dashboard/UpdateClass";
+import Payment from "../Pages/Dashboard/Payment";
 
 
  const router = createBrowserRouter ([
@@ -87,6 +88,10 @@ import UpdateClass from "../Pages/Dashboard/UpdateClass";
         {
             path: 'enrolledClasses',
             element: <EnrolledClasses></EnrolledClasses>
+        },
+        {
+            path: 'payment',
+            element: <Payment></Payment>
         }
      ]
     },
