@@ -2,9 +2,12 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useContext, useEffect, useState } from "react";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { AuthContext } from "../../Providers/AuthProviders";
+import Swal from "sweetalert2";
 
 
-const CheckoutForm = ({value}) => {
+const CheckoutForm = ({selectedClass}) => {
+    const{_id,classId,class_name,image,price} = selectedClass;
+    const value = parseFloat(price);
     const stripe = useStripe();
     const elements = useElements();
     const [cardError, setCardError] = useState('');
@@ -70,6 +73,29 @@ const CheckoutForm = ({value}) => {
        if(paymentIntent.status === "succeeded"){
         setTransactionId(paymentIntent.id)
         // const transactionId = paymentIntent.id;
+
+        const payment ={
+            email: user?.email,
+            transactionId: paymentIntent.id,
+            price,
+            class_name,
+            image,
+            classId
+        }
+        axiosSecure.post('/payments', payment)
+        .then(data=>{
+            console.log(data.data)
+            if (data.data.insertedId) {
+                
+                Swal.fire({
+                  title: "Success",
+                  text: "Payment Added to payment History List Successfully ",
+                  icon: "success",
+                  confirmButtonText: "Cool",
+                });
+              } 
+        })
+        axiosSecure.patch(`/cart/${_id}`)
        }
     }
     return (

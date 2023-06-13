@@ -19,6 +19,7 @@ import InstructorRoutes from "./InstructorRoutes";
 import AdminFeedback from "../Pages/Dashboard/AdminFeedback";
 import UpdateClass from "../Pages/Dashboard/UpdateClass";
 import Payment from "../Pages/Dashboard/Payment";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory";
 
 
  const router = createBrowserRouter ([
@@ -93,6 +94,10 @@ import Payment from "../Pages/Dashboard/Payment";
             path: 'payment/:id',
             element: <Payment></Payment>,
             loader: ({params}) => fetch(`http://localhost:5000/cart/${params.id}`)
+        },
+        {
+            path:'history',
+            element:<PaymentHistory></PaymentHistory>
         }
      ]
     },

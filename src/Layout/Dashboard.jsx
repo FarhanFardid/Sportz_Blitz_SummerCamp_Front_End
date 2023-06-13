@@ -10,6 +10,7 @@ import {
   FaBookReader,
   FaBookmark,
   FaMoneyCheckAlt,
+  FaMoneyBill,
 } from "react-icons/fa";
 import { ImBook } from "react-icons/im";
 
@@ -103,6 +104,15 @@ const Dashboard = () => {
                   >
                     <FaMoneyCheckAlt className="w-6 h-6 text-slate-950" />
                     My Enrolled Classes
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/dashboard/history"
+                    className="font-bold"
+                  >
+                    <FaMoneyBill className="w-6 h-6 text-slate-950" />
+                    My Payment History
                   </NavLink>
                 </li>
               </>

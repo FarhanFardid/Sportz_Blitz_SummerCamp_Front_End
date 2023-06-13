@@ -4,10 +4,11 @@ import ClassRow from "./ClassRow";
 
 const SelectedClasses = () => {
     const [classCart, refetch] = useClassCart();
+    const selectedClasses = classCart.filter(cart => cart.status !== "paid")
     return (
         <div>
             <h2 className="text-3xl text-center font-bold text-slate-900 py-4">My Selected Classes</h2>
-            <h3 className="text-xl text-center font-semibold">Total Selected Classes in the Cart: {classCart.length}</h3>
+            <h3 className="text-xl text-center font-semibold">Total Selected Classes in the Cart: {selectedClasses.length}</h3>
 
               <div className="m-4">
         <div className="overflow-x-auto">
@@ -24,7 +25,7 @@ const SelectedClasses = () => {
               </tr>
             </thead>
 
-            {classCart.map((cls, index) => (
+            {selectedClasses.map((cls, index) => (
               <ClassRow
                 key={cls._id}
                 cls={cls}
