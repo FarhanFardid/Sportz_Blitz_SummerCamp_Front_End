@@ -10,9 +10,9 @@ import ban6 from "../../assets/sports camp/Banner/basketball-4.png";
 
 const HomeSlider = () => {
   return (
-    <Carousel className="autoPlay infiniteLoop ">
-      <div className="h-[650px] relative  ">
-        <div className="absolute end-12 top-48  p-8 m-5 text-black bg-white bg-opacity-40 rounded-lg max-w-xl text-left">
+    <Carousel className="autoPlay infiniteLoop  md:max-h-full">
+      <div className=" md:h-[650px] relative  ">
+        <div className="absolute end-12 top-48  p-8 m-5 text-black bg-white bg-opacity-40 rounded-lg max-w-xl text-left hidden md:block">
           <h2 className="text-3xl font-bold text-red-700 my-4">
             Unleash Your Inner Athlete at Sportz Blitz Summer Camp
           </h2>
@@ -28,7 +28,7 @@ const HomeSlider = () => {
         <img src={ban1} />
       </div>
       <div className="h-[650px] relative">
-      <div className="absolute end-12 top-48  p-8 m-5 text-black bg-white bg-opacity-40 rounded-lg max-w-xl text-left">
+      <div className="absolute end-12 top-48  p-8 m-5 text-black bg-white bg-opacity-40 rounded-lg max-w-xl text-left hidden md:block">
           <h2 className="text-3xl font-bold text-red-700 my-4">
             Unleash Your Inner Athlete at Sportz Blitz Summer Camp
           </h2>
@@ -42,7 +42,7 @@ const HomeSlider = () => {
         </div>
         <img src={ban2} />
       </div>
-      <div className="h-[650px] relative">
+      <div className="h-[650px] ">
     
         <img src={ban3} />
       </div>

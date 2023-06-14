@@ -67,20 +67,20 @@ const ClassViewCard = ({ cls }) => {
     }
   };
   return (
-    <div className={(available_seats == 0)? "card lg:card-side bg-red-600 text-white grid grid-cols-12 gap-2" : "card lg:card-side bg-base-200 grid grid-cols-12 gap-2"}>
-      <figure className="col-span-8">
-        <img src={image} alt="class images" className="h-96 " />
+    <div className={(available_seats == 0)? "card lg:card-side bg-red-600 text-white grid grid-cols-12 gap-2 py-3" : "card lg:card-side bg-base-200 grid grid-cols-12 gap-2 py-3"}>
+      <figure className="md:col-span-8 col-span-full">
+        <img src={image} alt="class images" className="md:h-96 h-60 w-full " />
       </figure>
-      <div className="card-body col-span-4 space-y-1">
-        <h2 className="card-title text-2xl font-bold">{class_name}</h2>
-        <p className="font-bold text-xl">Instructor Name: {instructor_name}</p>
-        <p className="font-bold text-lg">available_seats: {available_seats}</p>
-        <p className="font-bold ">Price: ${price}</p>
-        <p className="font-bold ">Status: {status}</p>
+      <div className="card-body md:col-span-4 col-span-12 space-y-1">
+        <h2 className="card-title md:text-2xl text-lg font-bold">{class_name}</h2>
+        <p className="font-bold md:text-xl text-sm">Instructor Name: {instructor_name}</p>
+        <p className="font-bold md:text-lg text-sm">available_seats: {available_seats}</p>
+        <p className="font-bold text-xs md:text-base ">Price: ${price}</p>
+        <p className="font-bold text-xs md:text-base">Status: {status}</p>
         <div className="card-actions">
           <button
             onClick={() => handleSelect(cls)}
-            className={(isAdmin || isInstructor ||(available_seats == 0))? "btn font-bold text-white bg-slate-600  btn-disabled" : "btn font-bold text-white bg-slate-800 hover:bg-slate-950"}
+            className={(isAdmin || isInstructor ||(available_seats == 0))? "btn md:btn-md btn-sm font-bold text-white bg-slate-600  btn-disabled" : "btn font-bold text-white bg-slate-800 hover:bg-slate-950"}
           >
             Select Class
           </button>

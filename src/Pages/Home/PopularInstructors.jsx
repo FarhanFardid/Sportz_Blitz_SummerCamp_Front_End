@@ -5,10 +5,10 @@ const PopularInstructors = () => {
     const [instructors] = useInstructors();
     const topInstructors = instructors.slice(0,6);
     return (
-        <div className="p-2">
-            <h3 className="text-4xl font-bold text-amber-800 text-center py-3">Popular Instructors</h3>
-            <p className="text-center font-medium text-lg p-4">Sports Blitz Camp`s popular instructors bring their expertise and passion to inspire young athletes, fostering skill development and a love for sports.</p>
-          <div className="grid grid-cols-3 gap-5 pt-8">
+        <div className="p-2 ">
+            <h3 className="md:text-4xl text-2xl font-bold text-slate-800 text-center md:py-3 py-1">Popular Instructors</h3>
+            <p className="text-center md:font-medium  md:text-lg text-sm md:p-4 p-2">Sports Blitz Camp`s popular instructors bring their expertise and passion to inspire young athletes, fostering skill development and a love for sports.</p>
+          <div className="grid md:grid-cols-3 md:gap-5 md:pt-8 pt-2 gap-2">
             {
                 topInstructors.map(instructor => <InstructorCard key={instructor._id} instructor={instructor} ></InstructorCard>)
             }

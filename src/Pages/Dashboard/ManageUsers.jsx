@@ -17,15 +17,15 @@ const ManageUsers = () => {
           <table className="table mx-auto w-full m-5">
             <thead>
             <tr>
-        <th>
+        <th className="font-bold text-center text-black">
           No.
         </th>
-        <th className="font-bold text-center">Name</th>
-        <th className="font-bold text-center">Email</th>
-        <th className="font-bold text-center">Role</th>
-        <th className="font-bold text-center">Make Admin</th>
-        <th className="font-bold text-center">Make Instructor</th>
-        <th className="font-bold text-center">Delete</th>
+        <th className="font-bold text-center text-black">Name</th>
+        <th className="font-bold text-center text-black">Email</th>
+        <th className="font-bold text-center text-black">Role</th>
+        <th className="font-bold text-center text-black">Make Admin</th>
+        <th className="font-bold text-center text-black">Make Instructor</th>
+        <th className="font-bold text-center text-black">Delete</th>
       </tr>
             </thead>
 
