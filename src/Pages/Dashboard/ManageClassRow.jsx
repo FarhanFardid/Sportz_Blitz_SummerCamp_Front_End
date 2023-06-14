@@ -24,7 +24,7 @@ const ManageClassRow = ({ cls, index, refetch }) => {
       confirmButtonText: "Yes, Approve Class",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/classes/approved/${id}`, {
+        fetch(`https://sports-blitz-camp-server.vercel.app/classes/approved/${id}`, {
           method: "PATCH",
         })
           .then((res) => res.json())
@@ -48,7 +48,7 @@ const ManageClassRow = ({ cls, index, refetch }) => {
       confirmButtonText: "Yes, Deny ",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/classes/denied/${id}`, {
+        fetch(`https://sports-blitz-camp-server.vercel.app/classes/denied/${id}`, {
           method: "PATCH",
         })
           .then((res) => res.json())

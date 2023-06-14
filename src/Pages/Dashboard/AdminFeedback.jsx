@@ -24,7 +24,7 @@ const AdminFeedback = () => {
           
         console.log(data);
         reset()
-        fetch(`http://localhost:5000/classes/${_id}`, {
+        fetch(`https://sports-blitz-camp-server.vercel.app/classes/${_id}`, {
           method: "PATCH",
           headers:{
             'content-type' : 'application/json'

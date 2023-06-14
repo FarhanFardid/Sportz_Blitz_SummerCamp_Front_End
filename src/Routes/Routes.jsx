@@ -66,7 +66,7 @@ import PaymentHistory from "../Pages/Dashboard/PaymentHistory";
         {
           path: 'feedback/:id',
           element:<AdminRoutes><AdminFeedback></AdminFeedback></AdminRoutes>,
-          loader: ({params})=> fetch(`http://localhost:5000/classes/${params.id}`)
+          loader: ({params})=> fetch(`https://sports-blitz-camp-server.vercel.app/classes/${params.id}`)
         },
         {
             path: 'addClasses',
@@ -79,7 +79,7 @@ import PaymentHistory from "../Pages/Dashboard/PaymentHistory";
         {
              path:'updateClass/:id',
              element:<InstructorRoutes><UpdateClass></UpdateClass></InstructorRoutes>,
-             loader: ({params}) => fetch(`http://localhost:5000/classes/${params.id}`)
+             loader: ({params}) => fetch(`https://sports-blitz-camp-server.vercel.app/classes/${params.id}`)
              
         },
         {
@@ -93,7 +93,7 @@ import PaymentHistory from "../Pages/Dashboard/PaymentHistory";
         {
             path: 'payment/:id',
             element: <Payment></Payment>,
-            loader: ({params}) => fetch(`http://localhost:5000/cart/${params.id}`)
+            loader: ({params}) => fetch(`https://sports-blitz-camp-server.vercel.app/cart/${params.id}`)
         },
         {
             path:'history',

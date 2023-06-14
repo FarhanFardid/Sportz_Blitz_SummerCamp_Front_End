@@ -25,7 +25,7 @@ const UpdateClass = () => {
     
     console.log(updatedClass);
 
-    fetch(`http://localhost:5000/classes/update/${_id}`, {
+    fetch(`https://sports-blitz-camp-server.vercel.app/classes/update/${_id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

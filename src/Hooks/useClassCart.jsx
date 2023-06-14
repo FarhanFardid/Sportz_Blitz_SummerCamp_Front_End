@@ -8,7 +8,7 @@ const useClassCart = () => {
     queryKey: ["classCart", user?.email],
     queryFn: async () =>{
 
-        const response = await fetch(`http://localhost:5000/cart?email=${user?.email}`)
+        const response = await fetch(`https://sports-blitz-camp-server.vercel.app/cart?email=${user?.email}`)
         return response.json();
     }
    })

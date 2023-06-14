@@ -31,7 +31,7 @@ const Register = () => {
             .then(() => {
               toast.success("User Profile Successfully Updated ");
               const savedUser = { name: data.name, email: data.email };
-              fetch("http://localhost:5000/users", {
+              fetch("https://sports-blitz-camp-server.vercel.app/users", {
                 method: "POST",
                 headers: {
                   "content-type": "application/json",
@@ -79,7 +79,7 @@ toast.error("Password doesn't match")
           email: createdUser.email,
         };
         console.log(savedUser);
-        fetch("http://localhost:5000/users", {
+        fetch("https://sports-blitz-camp-server.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

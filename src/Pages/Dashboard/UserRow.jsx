@@ -16,7 +16,7 @@ const UserRow = ({ user, index, refetch }) => {
       confirmButtonText: "Yes, Remove",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://sports-blitz-camp-server.vercel.app/users/${id}`, {
           method: "DELETE",
           headers: {
             "content-type": "application/json",
@@ -47,7 +47,7 @@ const UserRow = ({ user, index, refetch }) => {
       confirmButtonText: "Yes, Make Admin",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/users/admin/${id}`, {
+        fetch(`https://sports-blitz-camp-server.vercel.app/users/admin/${id}`, {
           method: "PATCH",
         })
           .then((res) => res.json())
@@ -75,7 +75,7 @@ const UserRow = ({ user, index, refetch }) => {
       confirmButtonText: "Yes, Make Instructor",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/users/instructor/${id}`, {
+        fetch(`https://sports-blitz-camp-server.vercel.app/users/instructor/${id}`, {
           method: "PATCH",
         })
           .then((res) => res.json())

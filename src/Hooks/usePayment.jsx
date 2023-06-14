@@ -9,7 +9,7 @@ const usePayment = () => {
     queryKey: ["history", user?.email],
     queryFn: async () =>{
 
-        const response = await fetch(`http://localhost:5000/payments?email=${user?.email}`)
+        const response = await fetch(`https://sports-blitz-camp-server.vercel.app/payments?email=${user?.email}`)
         return response.json();
     }
    })

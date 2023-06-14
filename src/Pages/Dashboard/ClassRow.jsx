@@ -17,7 +17,7 @@ const ClassRow = ({ cls, index, refetch }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/cart/${_id}`, {
+        fetch(`https://sports-blitz-camp-server.vercel.app/cart/${_id}`, {
           method: "DELETE",
           headers: {
             "content-type": "application/json",
