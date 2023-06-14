@@ -6,7 +6,7 @@ const UpdateClass = () => {
   const {
     register,
     handleSubmit,
-    reset,
+    
     formState: { errors },
   } = useForm();
   const loadedData = useLoaderData();
@@ -22,7 +22,7 @@ const UpdateClass = () => {
       instructor_email: email,
       price,
     };
-    reset();
+    
     console.log(updatedClass);
 
     fetch(`http://localhost:5000/classes/update/${_id}`, {

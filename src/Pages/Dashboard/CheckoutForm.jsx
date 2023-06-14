@@ -96,6 +96,7 @@ const CheckoutForm = ({selectedClass}) => {
               } 
         })
         axiosSecure.patch(`/cart/${_id}`)
+        axiosSecure.patch(`/classes/seats/${classId}`)
        }
     }
     return (
