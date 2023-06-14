@@ -6,8 +6,8 @@
 
 ### Server Side Private Repo Link: [https://github.com/programming-hero-web-course1/b7a12-summer-camp-server_side-FarhanFardid]
 
-### Live Server Link: []
-### Live Site Link: []
+### Live Server Link: [https://sports-blitz-camp-server.vercel.app/]
+### Live Site Link: [https://sports-blitz-2349b.web.app/]
 
 ### "*" Technologies Used: React. React Router Dom, Tailwind CSS, Daisy UI, Express.js, Node, MongoDB, Material UI, Firebase, React-icons, React Hook Form, TanStack Query, Axios, JWT, React Stripe js, CORS, Dotenv 
 
