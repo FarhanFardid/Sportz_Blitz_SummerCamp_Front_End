@@ -22,9 +22,9 @@ const Dashboard = () => {
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstructor();
 
-  console.log(isAdmin);
+  // console.log(isAdmin);
 
-  console.log(isInstructor);
+  // console.log(isInstructor);
   return (
     <div>
       <DashboardNav></DashboardNav>

@@ -22,17 +22,17 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     userSignIn(data.email,data.password)
     .then(res => {
         const loggedUser = res.user;
         toast.success("Successfully Logged In")
-        console.log(loggedUser);
+        // console.log(loggedUser);
         navigate(from);
         reset()
     })
     .catch(error=>{
-        console.log(error)
+        // console.log(error)
         toast.error("Login Failed")
     })
 
@@ -42,14 +42,14 @@ const Login = () => {
     google()
     .then(res => {
         const loggedUser = res.user;
-        console.log(loggedUser);
+        // console.log(loggedUser);
         toast.success("Login Successful");
               navigate(from);
         const savedUser = {
           name: loggedUser.displayName,
           email: loggedUser.email,
         };
-        console.log(savedUser);
+        // console.log(savedUser);
         fetch("https://sports-blitz-camp-server.vercel.app/users", {
           method: "POST",
           headers: {
@@ -67,7 +67,7 @@ const Login = () => {
           });
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         toast.error("Login Failed");
       });
   };

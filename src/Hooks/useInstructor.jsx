@@ -11,7 +11,7 @@ const useInstructor = () => {
     queryKey: ['isInstructor', user?.email],
     queryFn: async()=>{
         const response = await axiosSecure.get(`/users/instructor/${user?.email}`)
-        console.log(response);
+        // console.log(response);
         return response.data.instructor;
     } 
 

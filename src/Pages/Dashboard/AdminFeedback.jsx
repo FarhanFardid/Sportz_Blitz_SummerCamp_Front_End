@@ -9,7 +9,7 @@ const AdminFeedback = () => {
     const {_id}= loadedData;
       
 
-    console.log(loadedData);
+    // console.log(loadedData);
     const {
         register,
         handleSubmit,
@@ -22,7 +22,7 @@ const AdminFeedback = () => {
        const message = {feedback};
     
           
-        console.log(data);
+        // console.log(data);
         reset()
         fetch(`https://sports-blitz-camp-server.vercel.app/classes/${_id}`, {
           method: "PATCH",

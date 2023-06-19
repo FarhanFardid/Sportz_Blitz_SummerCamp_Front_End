@@ -25,15 +25,15 @@ const AddClasses = () => {
     })
     .then(res =>res.json())
     .then (imgResponse =>{
-        console.log(imgResponse)
+        // console.log(imgResponse)
         if(imgResponse.success){
             const imgURL = imgResponse.data.display_url;
             const {name,instructor,seats,price,email} = data;
             const newClass = {class_name: name, instructor_name:instructor, instructor_email: email, available_seats:seats, price,image:imgURL, status: "pending", total_enrolled : 0, feedback: ''}
-            console.log(newClass); 
+            // console.log(newClass); 
             axiosSecure.post('/classes', newClass)
             .then(data=>{
-                console.log(data.data)
+                // console.log(data.data)
                 if (data.data.insertedId) {
                     reset();
                     Swal.fire({
@@ -47,7 +47,7 @@ const AddClasses = () => {
 
         }
     })
-    console.log(data);
+    // console.log(data);
   }
   return (
     <div>

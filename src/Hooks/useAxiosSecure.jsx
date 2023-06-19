@@ -3,13 +3,13 @@ import { AuthContext } from "../Providers/AuthProviders";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
+const axiosSecure = axios.create({
+    baseURL: 'https://sports-blitz-camp-server.vercel.app',
+});
 const useAxiosSecure = () => {
     const {logOut} = useContext(AuthContext);
     const navigate = useNavigate();
-    const axiosSecure = axios.create({
-        baseURL: 'https://sports-blitz-camp-server.vercel.app',
-    });
+ 
      useEffect(()=>{
        axiosSecure.interceptors.request.use((config) =>{
         const token = localStorage.getItem('access-token');
@@ -26,7 +26,7 @@ const useAxiosSecure = () => {
         return Promise.reject(error);
        }
        );
-     },[logOut,navigate,axiosSecure]);
+     },[logOut,navigate]);
 
      return [axiosSecure];
 

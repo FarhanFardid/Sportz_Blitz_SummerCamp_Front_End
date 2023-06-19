@@ -40,7 +40,7 @@ const ClassViewCard = ({ cls }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           if (data.insertedId) {
             refetch(); // refetch to show the updated data
             Swal.fire({

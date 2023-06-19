@@ -4,7 +4,7 @@ import ClassViewCard from "./ClassViewCard";
 const Classes = () => {
     const [classes] = useClasses();
     const approvedClasses = classes.filter(cls => cls.status === "approved")
-    console.log(approvedClasses);
+    // console.log(approvedClasses);
     
     return (
         <div className="bg-slate-200">

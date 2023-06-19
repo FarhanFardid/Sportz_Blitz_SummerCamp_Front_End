@@ -19,7 +19,7 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     if (data.password === data.confirm){
         // toast.success("Password Matched")
         createUser(data.email, data.password)
@@ -68,7 +68,7 @@ toast.error("Password doesn't match")
     google()
     .then(res => {
         const createdUser = res.user;
-        console.log(createdUser);
+        // console.log(createdUser);
         toast.success("Successfully Registered");
         logOut();
              
@@ -78,7 +78,7 @@ toast.error("Password doesn't match")
             : "Name not available",
           email: createdUser.email,
         };
-        console.log(savedUser);
+        // console.log(savedUser);
         fetch("https://sports-blitz-camp-server.vercel.app/users", {
           method: "POST",
           headers: {
@@ -96,7 +96,7 @@ toast.error("Password doesn't match")
           });
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         toast.error("Registration Failed");
       });
   };

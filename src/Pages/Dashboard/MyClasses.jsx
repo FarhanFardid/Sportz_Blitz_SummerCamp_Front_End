@@ -8,7 +8,7 @@ const MyClasses = () => {
     const {user} = useContext(AuthContext);
     const [classes,refetch] = useClasses();
     const myClasses = classes.filter(cls => cls.instructor_email === user.email)
-    console.log(myClasses);
+    // console.log(myClasses);
     return (
         <div>
             <h2 className="text-3xl text-center font-bold py-4 text-slate-950"> My classes</h2>

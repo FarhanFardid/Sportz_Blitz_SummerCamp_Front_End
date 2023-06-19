@@ -12,7 +12,7 @@ const UpdateClass = () => {
   const loadedData = useLoaderData();
   const { class_name, instructor_name, instructor_email, price, _id } =
     loadedData;
-  console.log(loadedData);
+  // console.log(loadedData);
 
   const onSubmit = (data) => {
     const { name, instructor, price, email } = data;
@@ -23,7 +23,7 @@ const UpdateClass = () => {
       price,
     };
     
-    console.log(updatedClass);
+    // console.log(updatedClass);
 
     fetch(`https://sports-blitz-camp-server.vercel.app/classes/update/${_id}`, {
       method: "PATCH",

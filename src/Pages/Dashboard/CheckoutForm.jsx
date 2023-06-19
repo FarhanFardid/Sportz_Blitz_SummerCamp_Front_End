@@ -21,10 +21,10 @@ const CheckoutForm = ({selectedClass}) => {
         axiosSecure.post('/create-payment-intent', {value})
         .then (res=> {
             
-            console.log(res.data.clientSecret)
+            // console.log(res.data.clientSecret)
             setClientSecret(res.data.clientSecret)
         })
-    },[])
+    },[value, axiosSecure])
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -37,20 +37,21 @@ const CheckoutForm = ({selectedClass}) => {
         if(card == null){
             return 
         }
-        console.log('card', card)
+        // console.log('card', card)
 
-        const {error, paymentMethod} = await stripe.createPaymentMethod({
+        // const {error, paymentMethod} = await stripe.createPaymentMethod({
+        const {error} = await stripe.createPaymentMethod({
             type: 'card',
             card
         })
 
         if(error){
             setCardError(error.message)
-            console.log('error', error)
+            // console.log('error', error)
         }
        else{
         setCardError('')
-        console.log('payment method', paymentMethod)
+        // console.log('payment method', paymentMethod)
        }
        setProcessing(true);
        const {paymentIntent, error:confirmError} = await stripe.confirmCardPayment(
@@ -66,9 +67,9 @@ const CheckoutForm = ({selectedClass}) => {
        },
        );
        if(confirmError){
-        console.log(confirmError)
+        // console.log(confirmError)
        }
-       console.log(paymentIntent)
+      //  console.log(paymentIntent)
        setProcessing(false)
        if(paymentIntent.status === "succeeded"){
         setTransactionId(paymentIntent.id)
@@ -84,7 +85,7 @@ const CheckoutForm = ({selectedClass}) => {
         }
         axiosSecure.post('/payments', payment)
         .then(data=>{
-            console.log(data.data)
+            // console.log(data.data)
             if (data.data.insertedId) {
                 
                 Swal.fire({
