@@ -14,5 +14,5 @@
 ### "*" Firebase Authentication system (Login and Register) and Social Login
 ### "*" Different Dashboard functionality based on authorization (Student, Instructor, Admin) 
 ### "*" Instructor can add new classes and update existing classes
-### "*" Students can select classes and enroll to the classes by making a payment through Cards
+### "*" Students can select classes and enroll in the classes by making a successful payment through cards
 ### "*" Admin can approve, deny classes that are added by the instructors. Can manage all the users and make new instructor or new admin from the users. Admin also can provide feedback on the denied class. 
