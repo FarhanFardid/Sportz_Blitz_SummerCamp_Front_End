@@ -9,7 +9,7 @@
 ### Live Server Link: [https://sports-blitz-camp-server.vercel.app/]
 ### Live Site Link: [https://sports-blitz-2349b.web.app/]
 
-### "*" Technologies Used: React. React Router Dom, Tailwind CSS, Daisy UI, Express.js, Node, MongoDB, Material UI, Firebase, React-icons, React Hook Form, TanStack Query, Axios, JWT, React Stripe js, CORS, Dotenv 
+### "*" Technologies Used: React. React Router Dom, Tailwind CSS, Daisy UI, Express.js,TanStack Query, Node, MongoDB, Material UI, Firebase, React-icons, React Hook Form, TanStack Query, Axios, JWT, React Stripe js, CORS, Dotenv 
 
 ### "*" Firebase Authentication system (Login and Register) and Social Login
 ### "*" Different Dashboard functionality based on authorization (Student, Instructor, Admin) 
