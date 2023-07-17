@@ -10,7 +10,7 @@ const ClassCard = ({cls}) => {
           <h2 className="card-title text-lg md:text-xl">Class Name: {class_name}</h2>
          
           <div className="card-actions ">
-          <Link to="/classes"><button className="btn btn-sm md:btn-md bg-slate-700 md:font-bold text-white hover:bg-slate-900">Learn More</button></Link>  
+          <Link to="/classes"><button className="btn btn-xs md:btn-md bg-slate-700 md:font-bold text-white hover:bg-slate-900">Learn More</button></Link>  
           </div>
         </div>
       </div>

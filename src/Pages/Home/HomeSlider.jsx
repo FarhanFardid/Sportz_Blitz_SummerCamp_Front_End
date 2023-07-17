@@ -1,16 +1,16 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import ban1 from "../../assets/sports camp/Banner/Volleyball-2.png";
-import ban2 from "../../assets/sports camp/Banner/football-2.png";
-import ban3 from "../../assets/sports camp/Banner/baseball-4.png";
-import ban4 from "../../assets/sports camp/Banner/cricket-4.png";
-import ban5 from "../../assets/sports camp/Banner/Tennis-4.png";
-import ban6 from "../../assets/sports camp/Banner/basketball-4.png";
+import ban1 from "../../assets/sports camp/Banner/Volleyball-2.jpg";
+import ban2 from "../../assets/sports camp/Banner/football-2.jpg";
+import ban3 from "../../assets/sports camp/Banner/baseball-4.jpg";
+import ban4 from "../../assets/sports camp/Banner/cricket-4.jpg";
+import ban5 from "../../assets/sports camp/Banner/Tennis-4.jpg";
+import ban6 from "../../assets/sports camp/Banner/basketball-4.jpg";
 
 
 const HomeSlider = () => {
   return (
-    <Carousel className="autoPlay infiniteLoop  md:max-h-full">
+    <Carousel className="autoPlay infiniteLoop  md:max-h-full max-h-80">
       <div className=" md:h-[650px] relative  ">
         <div className="absolute end-12 top-48  p-8 m-5 text-black bg-white bg-opacity-40 rounded-lg max-w-xl text-left hidden md:block">
           <h2 className="text-3xl font-bold text-red-700 my-4">

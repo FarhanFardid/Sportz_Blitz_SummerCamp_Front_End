@@ -3,7 +3,7 @@ import galImg2 from "../../assets/sports camp/Gallery/cricket-3.png";
 import galImg3 from "../../assets/sports camp/Gallery/volleyball-3.png";
 import galImg4 from "../../assets/sports camp/Gallery/Tennis-2.png";
 import galImg5 from "../../assets/sports camp/Gallery/hockey-4.png";
-import galImg6 from "../../assets/sports camp/Gallery/football-4.png";
+import galImg6 from "../../assets/sports camp/Gallery/football-4.jpg";
 import galImg7 from "../../assets/sports camp/Gallery/baseball-3.png";
 
 
