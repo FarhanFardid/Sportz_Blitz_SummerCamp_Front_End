@@ -2,7 +2,7 @@
 
 const HotLine = () => {
     return (
-        <div className="">
+        <div className="bg-slate-200">
             <h3 className="md:text-4xl text-2xl font-bold text-slate-800 text-center md:py-5 py-1">Have A Question? Call Now </h3>
 
             <div className="md:py-5 py-2 bg-black">

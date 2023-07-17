@@ -3,7 +3,7 @@ import regImg from "../../assets/sports camp/Gallery/registration.png";
 
 const Reg = () => {
   return (
-    <div>
+    <div className="bg-gray-200">
       <h2 className="md:text-4xl text-2xl font-bold text-slate-800 text-center md:py-3 py-1 ">
         Registration Going On
       </h2>
