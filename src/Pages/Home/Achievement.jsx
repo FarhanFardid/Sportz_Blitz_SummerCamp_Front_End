@@ -14,8 +14,8 @@ const Achievement = () => {
     <img src={certificate} alt="certificate" className="rounded-xl border-black border md:w-72 w-60 h-44 md:h-52" />
   </figure>
   <div className="card-body items-center text-center">
-    <h2 className="card-title font-bold">Certificate</h2>
-    <p>Receive a Professional Sports Training Certificate </p>
+    <h2 className="card-title md:text-xl text-lg font-bold">Certificate</h2>
+    <p className='text-xs md:text-base'>Receive a Professional Sports Training Certificate </p>
     
   </div>
 </div>
@@ -24,8 +24,8 @@ const Achievement = () => {
     <img src={career} alt="career" className="rounded-xl border-black border md:w-72 md:h-52 w-60 h-44" />
   </figure>
   <div className="card-body items-center text-center">
-    <h2 className="card-title font-bold">Career Opportunity</h2>
-    <p>Get an Opportunity to Build Career in Sports </p>
+    <h2 className="card-title font-bold md:text-xl text-lg ">Career Opportunity</h2>
+    <p className='text-xs md:text-base'>Get an Opportunity to Build Career in Sports </p>
     
   </div>
 </div>
@@ -34,8 +34,8 @@ const Achievement = () => {
     <img src={practical} alt="practical" className="rounded-xl border-black border  md:w-72 w-60 h-44 md:h-52" />
   </figure>
   <div className="card-body items-center text-center">
-    <h2 className="card-title font-bold">Practical Experience</h2>
-    <p>Achieve Practical Learning Experience of Sports </p>
+    <h2 className="card-title font-bold md:text-xl text-lg ">Practical Experience</h2>
+    <p className='text-xs md:text-base'>Achieve Practical Learning Experience of Sports </p>
     
   </div>
 </div>
