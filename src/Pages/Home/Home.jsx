@@ -1,4 +1,5 @@
 import Achievement from "./Achievement";
+import CampReview from "./CampReview/CampReview";
 import Gallery from "./Gallery";
 import HomeSlider from "./HomeSlider";
 import HotLine from "./HotLine";
@@ -16,9 +17,9 @@ const Home = () => {
            <PopularClasses></PopularClasses>
            <PopularInstructors></PopularInstructors>
            <Reg></Reg>
+           <CampReview></CampReview>
+      
            <HotLine></HotLine>
-           
-          
            <Gallery></Gallery>
           
         </div>
