@@ -2,7 +2,7 @@
 
 ### Live Site Link: [https://sports-blitz-2349b.web.app/]
  
-## Welcome to Sportz Blitz Summer Camp, a full Stack Sports Camp website. Your ultimate destination for summer sports camp. This full-stack MERN (MongoDB, Express.js, React.js, Node.js) website provides students, instructors, and administrators with a seamless experience for managing and participating in summer camps. With Firebase authentication for user management and React Stripe for online payments, Sportz Blitz Summer Camp ensures secure access and transactions for all users.
+## Welcome to Sportz Blitz Summer Camp, a full Stack Sports Camp website. Your ultimate destination for summer sports camp. This MERN-stack (MongoDB, Express.js, React.js, Node.js) website provides students, instructors, and administrators with a seamless experience for managing and participating in summer camps. With Firebase authentication for user management and React Stripe for online payments, Sportz Blitz Summer Camp ensures secure access and transactions for all users.
 
 ### Features:
 #### Student Dashboard:
